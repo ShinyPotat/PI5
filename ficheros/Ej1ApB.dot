@@ -1,0 +1,19 @@
+strict graph G {
+  1 [ color="blue" label="Ana(3 amigos)" ];
+  2 [ color="gray" label="Berta(1 amigos)" ];
+  3 [ color="gray" label="Adolfo(0 amigos)" ];
+  4 [ color="gray" label="Ivan(0 amigos)" ];
+  5 [ color="gray" label="Carmen(1 amigos)" ];
+  6 [ color="gray" label="Luis(1 amigos)" ];
+  7 [ color="blue" label="Juan(1 amigos)" ];
+  8 [ color="gray" label="Pedro(1 amigos)" ];
+  9 [ color="blue" label="Ramiro(1 amigos)" ];
+  10 [ color="gray" label="Eloy(0 amigos)" ];
+  11 [ color="blue" label="Isabel(3 amigos)" ];
+  1 -- 6 [ color="gray" label="" ];
+  2 -- 8 [ color="gray" label="" ];
+  9 -- 11 [ color="gray" label="" ];
+  5 -- 11 [ color="gray" label="" ];
+  7 -- 1 [ color="gray" label="" ];
+  11 -- 1 [ color="gray" label="" ];
+}
