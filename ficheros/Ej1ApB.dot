@@ -12,8 +12,8 @@ strict graph G {
   11 [ color="blue" label="Isabel(3 amigos)" ];
   1 -- 6 [ color="gray" label="" ];
   2 -- 8 [ color="gray" label="" ];
-  9 -- 11 [ color="gray" label="" ];
+  9 -- 11 [ color="blue" label="" ];
   5 -- 11 [ color="gray" label="" ];
-  7 -- 1 [ color="gray" label="" ];
-  11 -- 1 [ color="gray" label="" ];
+  7 -- 1 [ color="blue" label="" ];
+  11 -- 1 [ color="blue" label="" ];
 }

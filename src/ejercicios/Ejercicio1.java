@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.jgrapht.GraphPath;
 import org.jgrapht.alg.connectivity.ConnectivityInspector;
 import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
 import org.jgrapht.alg.vertexcover.GreedyVCImpl;
@@ -41,8 +42,8 @@ public class Ejercicio1 {
 		return Tuple.create(max, res);
 	}
 	
-	public static List<Miembro> apartadoB(SimpleGraph<Miembro, Amistad> graph, Miembro m1, Miembro m2) {
-		return DijkstraShortestPath.findPathBetween(graph, m1, m2).getVertexList();
+	public static GraphPath<Miembro, Amistad> apartadoB(SimpleGraph<Miembro, Amistad> graph, Miembro m1, Miembro m2) {
+		return DijkstraShortestPath.findPathBetween(graph, m1, m2);
 	}
 	
 	public static List<Set<Miembro>> apartadoC(SimpleGraph<Miembro, Amistad> graph) {

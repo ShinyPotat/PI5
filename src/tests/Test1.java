@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.jgrapht.GraphPath;
 import org.jgrapht.graph.SimpleGraph;
 import org.jgrapht.nio.Attribute;
 import org.jgrapht.nio.DefaultAttribute;
@@ -40,13 +41,14 @@ public class Test1 {
 				e -> GraphColors.getColor(Color.black));
 		
 		System.out.println("\nApartado b)\n");
-		List<Miembro> resB = Ejercicio1.apartadoB(graph, Miembro.ofName("Juan"), Miembro.ofName("Ramiro"));
-		System.out.println(resB);
+		GraphPath<Miembro, Amistad> resB = Ejercicio1.apartadoB(graph, Miembro.ofName("Juan"), Miembro.ofName("Ramiro"));
+		List<Miembro> resBVertexList = resB.getVertexList();
+		System.out.println(resBVertexList);
 		Graphs2.toDot(graph, "ficheros/Ej1ApB.dot",
 				v -> String.format("%s(%d amigos)", v.getName(), graph.edgesOf(v).size()),
 				e -> "",
-				v -> GraphColors.getColorIf(Color.blue, Color.gray, resB.contains(v)),
-				e -> GraphColors.getColor(Color.gray));
+				v -> GraphColors.getColorIf(Color.blue, Color.gray, resBVertexList.contains(v)),
+				e -> GraphColors.getColorIf(Color.blue, Color.gray, resB.getEdgeList().contains(e)));
 		
 		System.out.println("\nApartado c)\n");
 		List<Set<Miembro>> resC = Ejercicio1.apartadoC(graph);
@@ -71,7 +73,7 @@ public class Test1 {
 				v -> getColorIf(v, resC, colorList),
 				e -> getColorIf(e.getM1(), resC, colorList));
 		
-		System.out.println("\nApartado d)\n");
+		System.out.println("Apartado d)\n");
 		Set<Miembro> resD = Ejercicio1.apartadoD(graph);
 		System.out.println(resD);
 		Graphs2.toDot(graph, "ficheros/Ej1ApD.dot",
