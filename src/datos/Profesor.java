@@ -17,7 +17,7 @@ public class Profesor {
 		this.name = format[0];
 		this.groups = new ArrayList<>();
 		for(String s: format[1].split(",")) {
-			this.groups.add(s);
+			this.groups.add(s.trim());
 		}
 	}
 
